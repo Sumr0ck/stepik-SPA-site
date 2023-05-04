@@ -48,3 +48,4 @@ package.nls.*.json
 l10n/
 stepik-SPA-site*
 .vscode*
+blog/db.sqlite3
