@@ -1,5 +1,7 @@
 {% extends './base.html' %} 
 
+{% load static %}
+
 {% block title %}Главная страница{% endblock title %} 
 
 {% block header %}
@@ -13,7 +15,7 @@
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
         <img
-          src="img/third_img.jpg"
+          src="{% static 'img/third_img.jpg' %}"
           alt=""
           class="card-img-top"
           style="height: 180px"
@@ -38,7 +40,7 @@
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
         <img
-          src="img/second_image.jpg"
+          src="{% static 'img/second_image.jpg' %}"
           alt=""
           class="card-img-top"
           style="height: 180px"
@@ -63,7 +65,7 @@
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
         <img
-          src="img/first_img.jpg"
+          src="{% static 'img/first_img.jpg' %}"
           alt=""
           class="card-img-top"
           style="height: 180px"
@@ -88,7 +90,7 @@
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
         <img
-          src="img/second_image.jpg"
+          src="{% static 'img/second_image.jpg' %}"
           alt=""
           class="card-img-top"
           style="height: 180px"
@@ -113,7 +115,7 @@
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
         <img
-          src="img/third_img.jpg"
+          src="{% static 'img/third_img.jpg' %}"
           alt=""
           class="card-img-top"
           style="height: 180px"
@@ -138,7 +140,7 @@
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
         <img
-          src="img/first_img.jpg"
+          src="{% static 'img/first_img.jpg' %}"
           alt=""
           class="card-img-top"
           style="height: 180px"
