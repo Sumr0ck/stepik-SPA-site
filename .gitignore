@@ -49,3 +49,4 @@ l10n/
 stepik-SPA-site*
 .vscode*
 blog/db.sqlite3
+blog/static/
