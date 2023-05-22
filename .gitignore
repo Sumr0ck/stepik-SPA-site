@@ -50,3 +50,4 @@ stepik-SPA-site*
 .vscode*
 blog/db.sqlite3
 blog/static/
+blog/media/
