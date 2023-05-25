@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import View
 from django.core.paginator import Paginator
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
 from django.http import HttpResponseRedirect
 
-from .forms import SignUpForm
+from .forms import SignUpForm, SignInForm
 from .models import Post
 
 
@@ -47,3 +47,20 @@ class SignUpView(View):
             'form': form,
         })
     
+
+class SignInView(View):
+    def get(self, request, *args, **kwargs):
+        form = SignInForm()
+        return render(request, 'myblog/signin.html', context={'form': form})
+    
+    def post(self, request, *args, **kwargs):
+        form = SignInForm(request.POST)
+        if form.is_valid():
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return HttpResponseRedirect('/')
+        return render(request, 'myblog/signin.html', context={'form': form})
+        
