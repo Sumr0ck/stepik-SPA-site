@@ -18,13 +18,16 @@
           src="media/{{ post.image }}"
           alt=""
           class="card-img-top"
-          style="height: 180px"
+          style="height: 200px"
         />
         <div class="card-body">
           <h4 class="card-title">{{ post.h1 }}</h4>
           <div class="card-text">
             {{ post.descriptions|safe|truncatechars:100 }}
           </div>
+          {% for tag in post.tag.all %}
+            <a href="{% url 'tag' slug=tag.slug %}" class="mr-1 badge badge-info">{{ tag }}</a>
+          {% endfor %}
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
               <a href="{% url 'post_detail' slug=post.url %}" class="btn btn-sm btn-outline-secondary">Подробнее</a>
